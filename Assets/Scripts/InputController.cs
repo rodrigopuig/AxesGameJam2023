@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,12 +6,12 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-using Action = CustomAction.Action;
+using ActionID = CustomAction.ActionID;
 
 public class InputController : MonoBehaviour
 {
-    public TextMeshProUGUI leftRight;
-    public TextMeshProUGUI accelerate;
+    // public TextMeshProUGUI leftRight;
+    // public TextMeshProUGUI accelerate;
 
     CustomAction[] actions;
 
@@ -19,11 +20,12 @@ public class InputController : MonoBehaviour
         actions = new CustomAction[]
         {
             new TDAction(KeyCode.A, KeyCode.D, 1, 1),
-            new PatternAction(new KeyCode[]{ KeyCode.Q, KeyCode.W}, 0.2f, 1, 0.5f)
+            new TDAction(KeyCode.K, KeyCode.L, 1, 1),
+            new PatternAction(new KeyCode[]{ KeyCode.Q, KeyCode.W, KeyCode.Y, KeyCode.M}, 0.2f, 1, 0.5f)
         };
 
-        actions[(int)Action.TurnWheel_Left].onUpdate += (val) => leftRight.text = $"left_right: {val.ToString("0.00")}";
-        actions[(int)Action.Accelerate].onUpdate += (val) => accelerate.text = $"accelerate: {val.ToString("0.00")}";
+        // actions[(int)ActionID.TurnWheel_Left].onUpdate += (val) => leftRight.text = $"left_right: {val.ToString("0.00")}";
+        // actions[(int)ActionID.Accelerate].onUpdate += (val) => accelerate.text = $"accelerate: {val.ToString("0.00")}";
     }
 
     public void Update()
@@ -33,5 +35,10 @@ public class InputController : MonoBehaviour
         {
             actions[i].Update(_deltaTime);
         }
+    }
+
+    public void SetListener(ActionID _actionID, Action<float> onUpdate)
+    {
+        actions[(int)_actionID].onUpdate += onUpdate;
     }
 }

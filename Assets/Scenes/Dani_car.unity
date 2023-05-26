@@ -833,6 +833,7 @@ GameObject:
   - component: {fileID: 1407339711}
   - component: {fileID: 1407339710}
   - component: {fileID: 1407339712}
+  - component: {fileID: 1407339713}
   m_Layer: 0
   m_Name: car_root
   m_TagString: Untagged
@@ -897,6 +898,19 @@ MonoBehaviour:
     steering: 0
   maxMotorTorque: 4000
   maxSteeringAngle: 30
+  inputController: {fileID: 1407339713}
+--- !u!114 &1407339713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407339709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5bf71bafb68468b8944f607743a2a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1926393341
 PrefabInstance:
   m_ObjectHideFlags: 0
