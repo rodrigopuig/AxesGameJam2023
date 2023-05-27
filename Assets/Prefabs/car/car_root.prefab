@@ -5713,7 +5713,7 @@ WheelCollider:
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
   m_Mass: 20
-  m_WheelDampingRate: 0.25
+  m_WheelDampingRate: 10
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 1
@@ -5841,10 +5841,10 @@ MonoBehaviour:
     speed: 1
     recoverSpeed: 1
   motorAction:
-    pattern: 71000000770000007700000065000000
-    recoverTime: 1
+    pattern: 7100000077000000
+    recoverTime: 0.2
     variantPerCompletedPattern: 0.2
-    recoverSpeed: 0.5
+    recoverSpeed: 5
   brakeAction:
     leftKey: 110
     rightKey: 109
@@ -5957,7 +5957,7 @@ WheelCollider:
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
   m_Mass: 20
-  m_WheelDampingRate: 0.25
+  m_WheelDampingRate: 10
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 1
@@ -6119,7 +6119,7 @@ WheelCollider:
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
   m_Mass: 20
-  m_WheelDampingRate: 0.25
+  m_WheelDampingRate: 10
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 1
@@ -6184,7 +6184,7 @@ WheelCollider:
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
   m_Mass: 20
-  m_WheelDampingRate: 0.25
+  m_WheelDampingRate: 10
   m_ForwardFriction:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 1
@@ -6810,6 +6810,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: visual_wheel
       objectReference: {fileID: 0}
+    - target: {fileID: 566642055224869183, guid: 7eb585ca9aa669a42a1ca95fa6de4eab, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3050431631011696381, guid: 7eb585ca9aa669a42a1ca95fa6de4eab, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -6920,6 +6924,10 @@ PrefabInstance:
     - target: {fileID: 566642055224869183, guid: 7eb585ca9aa669a42a1ca95fa6de4eab, type: 3}
       propertyPath: m_Name
       value: visual_wheel
+      objectReference: {fileID: 0}
+    - target: {fileID: 566642055224869183, guid: 7eb585ca9aa669a42a1ca95fa6de4eab, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3050431631011696381, guid: 7eb585ca9aa669a42a1ca95fa6de4eab, type: 3}
       propertyPath: m_RootOrder

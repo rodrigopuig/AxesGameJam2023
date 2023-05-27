@@ -1597,6 +1597,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: finish_line
       objectReference: {fileID: 0}
+    - target: {fileID: 3681094900816074017, guid: 0f5f616dbf4f4674a9c0fab3aa41b9da, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3681094900816074019, guid: 0f5f616dbf4f4674a9c0fab3aa41b9da, type: 3}
       propertyPath: m_RootOrder
       value: 7
