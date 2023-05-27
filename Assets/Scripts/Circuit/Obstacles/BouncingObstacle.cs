@@ -10,10 +10,12 @@ public class BouncingObstacle : MonoBehaviour
 
     public CapsuleCollider physicalCapsuleCollider;
 
+    [Header("Component")]
+    public Transform trSprite;
+
     [Header("Gizmos")]
     public bool drawGizmos;
 
-    
 
     float radius;
 
