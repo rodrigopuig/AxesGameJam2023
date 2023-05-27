@@ -40,5 +40,7 @@ public class CarButterflyAnimation : MonoBehaviour
     {
         completeComboPs.Stop(true, ParticleSystemStopBehavior.StopEmitting);
         completeComboPs.Play(true);
+        
+        SoundController.instance.PlaySound(SFXid.mariposa);
     }
 }

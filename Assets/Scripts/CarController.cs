@@ -53,6 +53,10 @@ public class CarController : MonoBehaviour {
 
     public void SetMotorPower(float power)
     {
+        if(power > 0 && motorPower == 0)
+        {
+            SoundController.instance.PlaySound(SFXid.cochinilla);
+        }
         motorPower = maxMotorTorque * (power /* * 2 - 1 */);
     }
 
@@ -61,8 +65,15 @@ public class CarController : MonoBehaviour {
     // any other value -> do nothing
     public void SetBrakingWheel(float wheel)
     {
+        float velocity = rb.velocity.magnitude;
+        SoundController.instance.UpdateRunVolume(velocity);
+
         if(wheel == 0)
         {
+            if(leftBrake == 0 && velocity > 5)
+            {
+                SoundController.instance.PlaySound(SFXid.escarabajo);
+            }
             leftBrake = maxBrake;
             rightBrake = 0;
 
@@ -73,6 +84,10 @@ public class CarController : MonoBehaviour {
         }
         else if(wheel == 1)
         {
+            if(rightBrake == 0 && velocity > 5)
+            {
+                SoundController.instance.PlaySound(SFXid.escarabajo);
+            }
             rightBrake = maxBrake;
             leftBrake = 0;
 
@@ -147,5 +162,13 @@ public class CarController : MonoBehaviour {
         // visualWheel.transform.rotation = rotation * Quaternion.Euler(0, 0, 90);
         
         onWheelRotation?.Invoke(isFront ? 0 : 1, isLeft ? 0 : 1, rotation);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.relativeVelocity.magnitude > 5)
+        {
+            SoundController.instance.PlaySound(SFXid.chocazo);
+        }
     }
 }

@@ -65,6 +65,8 @@ public class GameManager : MonoBehaviour
         }
 
         scoreBoard.text = finalScores;
+
+        SoundController.instance.PlaySound(SFXid.meta);
     }
 
     public void SetTeamName(string name)
@@ -81,6 +83,8 @@ public class GameManager : MonoBehaviour
             currentTeamName = "(unnamed)";
         }
 
+        SoundController.instance.PlaySound(SFXid.boton);
+
         StartCoroutine(StartRoutine());
     }
 
@@ -94,6 +98,7 @@ public class GameManager : MonoBehaviour
         for(int i = 3; i > 0; --i)
         {
             Debug.Log(i.ToString());
+            SoundController.instance.PlaySound(SFXid.countdown321);
             countdown.text = i.ToString();
             int sizeOffset = 0;
             do
@@ -113,6 +118,7 @@ public class GameManager : MonoBehaviour
         countdown.text = "0";
 
         {
+            SoundController.instance.PlaySound(SFXid.countdown0);
             int sizeOffset = 0;
             do
             {
