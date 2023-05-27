@@ -15,10 +15,15 @@ public class ControlViewer : MonoBehaviour
     public RectTransform slotParent;
 
     [Header("Components")]
-    public InputController inputController;
     public VerticalLayoutGroup verticalLayout;
 
-    public Dictionary<ActionID, UIKeyCap[]> idKeycapPair;
+    InputController inputController;
+    Dictionary<ActionID, UIKeyCap[]> idKeycapPair;
+    
+    private void Awake()
+    {
+        inputController = FindObjectOfType<InputController>();
+    }
 
     private IEnumerator Start()
     {
@@ -51,7 +56,7 @@ public class ControlViewer : MonoBehaviour
 
         RectTransform _keyBackground = Instantiate(slotBackground, slotParent);
         ConfigureKey(_left, _id, 0, _keyBackground);
-        ConfigureKey(_left, _id, 1, _keyBackground);
+        ConfigureKey(_right, _id, 1, _keyBackground);
     }
 
     public void FillKeycapPerId(int _actionId, PatternAction _action)
