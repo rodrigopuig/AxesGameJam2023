@@ -167,13 +167,17 @@ MonoBehaviour:
     rightWheel: {fileID: 6186508079200530803}
     motor: 1
     steering: 1
+    braking: 0
   - leftWheel: {fileID: 6186508080568927742}
     rightWheel: {fileID: 6186508081010270767}
     motor: 0
     steering: 0
+    braking: 1
   maxMotorTorque: 4000
+  maxBrake: 4000
   maxSteeringAngle: 30
   inputController: {fileID: 6186508079411974229}
+  rb: {fileID: 0}
 --- !u!114 &6186508079411974229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,6 +205,11 @@ MonoBehaviour:
     recoverTime: 0.2
     variantPerCompletedPattern: 1
     recoverSpeed: 0.5
+  brakeAction:
+    leftKey: 110
+    rightKey: 109
+    speed: 1000
+    recoverSpeed: 1000
 --- !u!1 &6186508080278325923
 GameObject:
   m_ObjectHideFlags: 0
