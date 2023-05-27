@@ -5,6 +5,10 @@ using UnityEngine;
 [System.Serializable]
 public class PatternAction : CustomAction
 {
+    public System.Action<int> onKeyAddedToPattern;
+    public System.Action onComplete;
+    public System.Action onFail;
+
     public KeyCode[] pattern;
     KeyCode[] buffer;
 
@@ -20,16 +24,10 @@ public class PatternAction : CustomAction
 
     public PatternAction Initialize()
     {
-        // recoverTime = _recoverTime;
         recoverCounter = 0;
-
-        // recoverSpeed = _recoverSpeed;
-
-        // variantPerCompletedPattern = _variantPerCompletedPattern;
         variationCounter = 0;
 
         patternSize = pattern.Length;
-        // pattern = _pattern;
         buffer = new KeyCode[patternSize];
 
         return this;
@@ -37,7 +35,8 @@ public class PatternAction : CustomAction
 
     public override void Update(float _deltaTime)
     {
-        for(int i = 0; i<patternSize; i++)
+        bool _found = false;
+        for(int i = 0; i<patternSize && !_found; i++)
         {
             if (Input.GetKeyDown(pattern[i]))
             {
@@ -45,9 +44,12 @@ public class PatternAction : CustomAction
 
                 if (buffer[patternCounter-1] == pattern[patternCounter-1])
                 {
+                    _found = true;
                     recoverCounter = 0;
 
-                    if(patternCounter >= patternSize)
+                    onKeyAddedToPattern?.Invoke(patternCounter - 1);
+
+                    if (patternCounter >= patternSize)
                     {
                         patternCounter = 0;
                         CompletePattern();
@@ -75,12 +77,16 @@ public class PatternAction : CustomAction
 
     void ResetCounter()
     {
+        if(patternCounter>0)
+            ComboFailed();
+
         patternCounter = 0;
     }
 
     void CompletePattern()
     {
         variationCounter = Mathf.Clamp01(variationCounter + variantPerCompletedPattern);
+        onComplete?.Invoke();
     }
 
     public override void ConfigureView(int _actionId, ControlViewer _controlViewer)
@@ -91,5 +97,10 @@ public class PatternAction : CustomAction
     public KeyCode[] GetPattern()
     {
         return pattern;
+    }
+
+    public void ComboFailed()
+    {
+        onFail?.Invoke();
     }
 }
