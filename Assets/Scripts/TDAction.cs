@@ -70,9 +70,9 @@ public class TDAction : CustomAction
         onUpdate?.Invoke(counter);
     }
 
-    public override void ConfigureView(ControlViewer _controlViewer)
+    public override void ConfigureView(int _actionId, ControlViewer _controlViewer)
     {
-        _controlViewer.FillKeycapPerId(this);
+        _controlViewer.FillKeycapPerId(_actionId, this);
     }
 
     public KeyCode GetLeft() { return leftKey; }

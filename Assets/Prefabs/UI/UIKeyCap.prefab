@@ -163,7 +163,7 @@ RectTransform:
   m_GameObject: {fileID: 5895719421095553407}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9999998, y: 0.9999998, z: 0.9999998}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 798879275893102305}
@@ -226,6 +226,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imgKeycap: {fileID: 5893866901810702382}
-  txtKeyCap: {fileID: 0}
+  txtKeyCap: {fileID: 5531183124077904473}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   pressedColor: {r: 0.5304824, g: 0.8584906, b: 0.58296376, a: 1}
