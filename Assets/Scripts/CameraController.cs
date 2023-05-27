@@ -13,7 +13,7 @@ public class CameraController : MonoBehaviour
         car = FindObjectOfType<CarController>();
     }
 
-    void Update()
+    void LateUpdate()
     {
         if(car.rb != null)
         {
