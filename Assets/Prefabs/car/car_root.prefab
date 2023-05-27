@@ -10881,7 +10881,7 @@ WheelCollider:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
@@ -11001,6 +11001,7 @@ MonoBehaviour:
     speed: 1
     recoverSpeed: 1
   rightWheelAction:
+<<<<<<< HEAD
     leftKey: 97
     rightKey: 100
     speed: 1
@@ -11010,6 +11011,17 @@ MonoBehaviour:
     recoverTime: 0.5
     variantPerCompletedPattern: 0.05
     recoverSpeed: 1
+=======
+    leftKey: 258
+    rightKey: 259
+    speed: 1
+    recoverSpeed: 1
+  motorAction:
+    pattern: 7100000077000000
+    recoverTime: 0.5
+    variantPerCompletedPattern: 0.03
+    recoverSpeed: 0.5
+>>>>>>> 12366649b5dedffab9170bf6cf61f8d9b20e824f
   brakeAction:
     leftKey: 110
     rightKey: 109
@@ -11191,7 +11203,7 @@ WheelCollider:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
@@ -11353,7 +11365,7 @@ WheelCollider:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
@@ -11418,7 +11430,7 @@ WheelCollider:
     m_ExtremumSlip: 0.4
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2

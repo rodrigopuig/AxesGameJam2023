@@ -113,6 +113,14 @@ public class CarController : MonoBehaviour {
             {
                 axleInfo.leftWheel.motorTorque = -leftBrake;
                 axleInfo.rightWheel.motorTorque = -rightBrake;
+                if(leftBrake > 0 || rightBrake > 0)
+                {
+                    rb.drag = 1;
+                }
+                else
+                {
+                    rb.drag = 0.2f;
+                }
             }
 
             ApplyLocalPositionToVisuals(i == 0, true, axleInfo.leftWheel);
