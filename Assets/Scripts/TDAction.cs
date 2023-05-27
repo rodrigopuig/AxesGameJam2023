@@ -11,8 +11,8 @@ public class TDAction : CustomAction
     public KeyCode leftKey, rightKey;
 
     private float counter;
-    public float     speed;
-    public float     recoverSpeed;
+    public float speed;
+    public float recoverSpeed;
 
     private bool keysHaveBeenPressed;
 
@@ -31,13 +31,13 @@ public class TDAction : CustomAction
     {
         keysHaveBeenPressed = false;
 
-        if(Input.GetKey(leftKey))
+        if (Input.GetKey(leftKey))
         {
             keysHaveBeenPressed = true;
             counter -= _deltaTime * speed;
         }
 
-        if(Input.GetKey(rightKey))
+        if (Input.GetKey(rightKey))
         {
             keysHaveBeenPressed = true;
             counter += _deltaTime * speed;
@@ -45,7 +45,7 @@ public class TDAction : CustomAction
 
         counter = Mathf.Clamp(counter, 0, 1);
 
-        if(keysHaveBeenPressed)
+        if (keysHaveBeenPressed)
         {
             //de momento nada
         }
@@ -69,4 +69,12 @@ public class TDAction : CustomAction
 
         onUpdate?.Invoke(counter);
     }
+
+    public override void ConfigureView(ControlViewer _controlViewer)
+    {
+        _controlViewer.FillKeycapPerId(this);
+    }
+
+    public KeyCode GetLeft() { return leftKey; }
+    public KeyCode GetRight() { return rightKey; }
 }
