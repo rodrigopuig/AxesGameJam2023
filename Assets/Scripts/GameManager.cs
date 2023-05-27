@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 {
     public bool deleteData;
     public GameObject mainMenu;
+    public GameObject controlsUI;
+    public TextMeshProUGUI countdown;
     public TextMeshProUGUI scoreBoard;
 
     private string currentTeamName;
@@ -19,7 +21,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 0;
+        Time.timeScale = 0.000000001f;
 
         FinishLine.Finish += OnFinishLine;
 
@@ -27,6 +29,10 @@ public class GameManager : MonoBehaviour
         {
             PlayerPrefs.DeleteAll();
         }
+
+        mainMenu.SetActive(true);
+        controlsUI.SetActive(false);
+        countdown.gameObject.SetActive(false);
 
         string[] scores = PlayerPrefs.GetString("scores").Split("\n");
         List<Tuple<string, float>> scoreStruct = new List<Tuple<string, float>>();
@@ -69,13 +75,55 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         mainMenu.SetActive(false);
-        Time.timeScale = 1;
-        startTime = Time.time;
 
         if(string.IsNullOrEmpty(currentTeamName))
         {
             currentTeamName = "(unnamed)";
         }
+
+        StartCoroutine(StartRoutine());
+    }
+
+    private IEnumerator StartRoutine()
+    {
+        yield return new WaitForSecondsRealtime(0.5f);
+
+        countdown.gameObject.SetActive(true);
+        controlsUI.SetActive(true);
+
+        for(int i = 3; i > 0; --i)
+        {
+            Debug.Log(i.ToString());
+            countdown.text = i.ToString();
+            int sizeOffset = 0;
+            do
+            {
+                countdown.fontSize++;
+                sizeOffset++;
+                yield return new WaitForSecondsRealtime(0.03f);
+            }
+            while(sizeOffset < 30);
+            countdown.fontSize -= sizeOffset;
+        }
+
+
+        Time.timeScale = 1;
+        startTime = Time.time;
+
+        countdown.text = "0";
+
+        {
+            int sizeOffset = 0;
+            do
+            {
+                countdown.fontSize += 50;
+                sizeOffset += 50;
+                yield return new WaitForSecondsRealtime(0.01f);
+            }
+            while(sizeOffset < 5000);
+        }
+
+        countdown.gameObject.SetActive(false);
     }
 
     private void OnFinishLine()
