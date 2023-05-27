@@ -16,12 +16,15 @@ public class CarController : MonoBehaviour {
     public float maxSteeringAngle;
     public InputController inputController;
 
+    [HideInInspector]public Rigidbody rb;
+
     private float leftSteering;
     private float rightSteering;
     private float motorPower;
 
     private void Start()
     {
+        rb = GetComponentInChildren<Rigidbody>();
         inputController.SetListener(CustomAction.ActionID.TurnWheel_Left, SetLeftWheelRotation);
         inputController.SetListener(CustomAction.ActionID.TurnWheel_Right, SetRightWheelRotation);
         inputController.SetListener(CustomAction.ActionID.Accelerate, SetMotorPower);

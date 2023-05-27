@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    private Transform car;
+    public float lookAhead;
+    public float smooth;
+    private CarController car;
 
     void Start()
     {
-        car = FindObjectOfType<CarController>().transform;
+        car = FindObjectOfType<CarController>();
     }
 
     void Update()
     {
-        transform.position = car.position;
+        if(car.rb != null)
+        {
+            transform.position = Vector3.Lerp(transform.position, car.transform.position + car.rb.velocity * lookAhead, smooth);
+        }
     }
 }
