@@ -5,24 +5,26 @@ using UnityEngine;
 /// <summary>
 /// ranges goes from -1 to 1
 /// </summary>
+[System.Serializable]
 public class TDAction : CustomAction
 {
-    KeyCode leftKey, rightKey;
+    public KeyCode leftKey, rightKey;
 
-    float counter,
-         speed,
-         recoverSpeed;
+    private float counter;
+    public float     speed;
+    public float     recoverSpeed;
 
-    bool keysHaveBeenPressed;
+    private bool keysHaveBeenPressed;
 
-    public TDAction(KeyCode _leftKey, KeyCode _rightKey, float _speed, float _recoverSpeed)
+    public TDAction Initialize()
     {
-        leftKey = _leftKey;
-        rightKey = _rightKey;
+        // leftKey = _leftKey;
+        // rightKey = _rightKey;
 
         counter = 0.5f;
-        speed = _speed;
-        recoverSpeed = _recoverSpeed;
+        // speed = _speed;
+        // recoverSpeed = _recoverSpeed;
+        return this;
     }
 
     public override void Update(float _deltaTime)

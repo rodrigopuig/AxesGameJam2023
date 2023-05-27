@@ -15,13 +15,17 @@ public class InputController : MonoBehaviour
 
     CustomAction[] actions;
 
+    public TDAction leftWheelAction;
+    public TDAction rightWheelAction;
+    public PatternAction motorAction;
+
     private void Awake()
     {
         actions = new CustomAction[]
         {
-            new TDAction(KeyCode.A, KeyCode.D, 1, 1),
-            new TDAction(KeyCode.K, KeyCode.L, 1, 1),
-            new PatternAction(new KeyCode[]{ KeyCode.Q, KeyCode.W, KeyCode.Y, KeyCode.M}, 0.2f, 1, 0.5f)
+            leftWheelAction.Initialize(),
+            rightWheelAction.Initialize(),
+            motorAction.Initialize()
         };
 
         // actions[(int)ActionID.TurnWheel_Left].onUpdate += (val) => leftRight.text = $"left_right: {val.ToString("0.00")}";

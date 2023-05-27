@@ -2,34 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class PatternAction : CustomAction
 {
-    KeyCode[] pattern;
+    public KeyCode[] pattern;
     KeyCode[] buffer;
 
-    float recoverTime;
+    public float recoverTime;
     float recoverCounter;
 
-    float variantPerCompletedPattern;
-    float recoverSpeed; //velocidad de recuperacion despues de X tiempo sin input
+    public float variantPerCompletedPattern;
+    public float recoverSpeed; //velocidad de recuperacion despues de X tiempo sin input
     float variationCounter; //increases after completing a combo
 
     int patternCounter,
         patternSize;
 
-    public PatternAction(KeyCode[] _pattern, float _variantPerCompletedPattern, float _recoverTime, float _recoverSpeed)
+    public PatternAction Initialize()
     {
-        recoverTime = _recoverTime;
+        // recoverTime = _recoverTime;
         recoverCounter = 0;
 
-        recoverSpeed = _recoverSpeed;
+        // recoverSpeed = _recoverSpeed;
 
-        variantPerCompletedPattern = _variantPerCompletedPattern;
+        // variantPerCompletedPattern = _variantPerCompletedPattern;
         variationCounter = 0;
 
-        patternSize = _pattern.Length;
-        pattern = _pattern;
+        patternSize = pattern.Length;
+        // pattern = _pattern;
         buffer = new KeyCode[patternSize];
+
+        return this;
     }
 
     public override void Update(float _deltaTime)
