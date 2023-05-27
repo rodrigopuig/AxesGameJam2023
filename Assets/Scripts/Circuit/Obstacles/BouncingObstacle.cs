@@ -12,10 +12,14 @@ public class BouncingObstacle : MonoBehaviour
 
     [Header("Component")]
     public Transform trSprite;
+    public bool applyMaxScale;
+    public float maxScale;
 
     [Header("Gizmos")]
     public bool drawGizmos;
 
+    Vector2 originalSpriteScale;
+    Vector2 maxSpriteScale;
 
     float radius;
 
@@ -23,6 +27,19 @@ public class BouncingObstacle : MonoBehaviour
     {
         physicalCapsuleCollider = GetComponent<CapsuleCollider>();
         radius = physicalCapsuleCollider.radius;
+
+        originalSpriteScale = trSprite.localScale;
+
+        if(applyMaxScale)
+        {
+            float _scale = Mathf.Clamp(maxRadius / radius, 0.1f, maxScale);
+            maxSpriteScale = originalSpriteScale * maxScale;
+        }
+        else
+        {
+            maxSpriteScale = originalSpriteScale * (maxRadius / radius);
+        }
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -33,11 +50,14 @@ public class BouncingObstacle : MonoBehaviour
 
     IEnumerator Grow()
     {
-        float counter = 0;
-        while(counter < timeToGrow)
+        float _counter = 0;
+        float _lerpValue = 0;
+        while(_counter < timeToGrow)
         {
-            counter += Time.deltaTime;
-            physicalCapsuleCollider.radius = Mathf.Lerp(radius, maxRadius, curve.Evaluate(counter / timeToGrow));
+            _counter += Time.deltaTime;
+            _lerpValue = curve.Evaluate(_counter / timeToGrow);
+            physicalCapsuleCollider.radius = Mathf.Lerp(radius, maxRadius, _lerpValue);
+            trSprite.localScale = Vector2.Lerp(originalSpriteScale, maxSpriteScale, _lerpValue);
             yield return null;
         }
     }
