@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4941742530043561284}
   - component: {fileID: 4941742530043561287}
   - component: {fileID: 4941742530043561286}
-  - component: {fileID: 4941742530043561281}
   m_Layer: 5
   m_Name: Canvas_ UI
   m_TagString: Untagged
@@ -102,33 +101,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &4941742530043561281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4941742530043561280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f5bf71bafb68468b8944f607743a2a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftWheelAction:
-    leftKey: 97
-    rightKey: 100
-    speed: 1
-    recoverSpeed: 1
-  rightWheelAction:
-    leftKey: 107
-    rightKey: 108
-    speed: 1
-    recoverSpeed: 1
-  motorAction:
-    pattern: 7100000077000000770000007700000077000000
-    recoverTime: 0.2
-    variantPerCompletedPattern: 1
-    recoverSpeed: 0.5
 --- !u!1 &4941742530070224419
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,5 +195,4 @@ MonoBehaviour:
   slotBackground: {fileID: 3382229331806049541, guid: 8c1806a2997b2483185ee36cbffdaf23, type: 3}
   keycapPrefab: {fileID: 1819567272023465796, guid: e8f46062da54543a9b786a85c2db4bb1, type: 3}
   slotParent: {fileID: 4941742530070224416}
-  inputController: {fileID: 4941742530043561281}
   verticalLayout: {fileID: 4941742530070224422}

@@ -15,10 +15,15 @@ public class ControlViewer : MonoBehaviour
     public RectTransform slotParent;
 
     [Header("Components")]
-    public InputController inputController;
     public VerticalLayoutGroup verticalLayout;
 
-    public Dictionary<ActionID, UIKeyCap[]> idKeycapPair;
+    InputController inputController;
+    Dictionary<ActionID, UIKeyCap[]> idKeycapPair;
+    
+    private void Awake()
+    {
+        inputController = FindObjectOfType<InputController>();
+    }
 
     private IEnumerator Start()
     {
