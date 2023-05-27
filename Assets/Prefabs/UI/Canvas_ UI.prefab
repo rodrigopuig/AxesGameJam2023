@@ -192,7 +192,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d40f535f4df4c4aa39fbbb0094c874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slotBackground: {fileID: 3382229331806049541, guid: 8c1806a2997b2483185ee36cbffdaf23, type: 3}
+  twoSidesSliderSlotBackground: {fileID: 3382229331806049541, guid: 8c1806a2997b2483185ee36cbffdaf23, type: 3}
+  normalSliderSlotBackground: {fileID: 3382229331806049541, guid: 18644b02f8dc54ecda16ada723049bac, type: 3}
   keycapPrefab: {fileID: 1819567272023465796, guid: e8f46062da54543a9b786a85c2db4bb1, type: 3}
   slotParent: {fileID: 4941742530070224416}
   verticalLayout: {fileID: 4941742530070224422}

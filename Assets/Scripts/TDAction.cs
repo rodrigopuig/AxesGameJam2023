@@ -8,6 +8,10 @@ using UnityEngine;
 [System.Serializable]
 public class TDAction : CustomAction
 {
+    //0 or 1 for unpressed - pressed
+    public System.Action<int> onLeftPressed;
+    public System.Action<int> onRightPressed;
+
     public KeyCode leftKey, rightKey;
 
     private float counter;
@@ -35,13 +39,21 @@ public class TDAction : CustomAction
         {
             keysHaveBeenPressed = true;
             counter -= _deltaTime * speed;
+
+            onLeftPressed?.Invoke(1);
         }
+        else
+            onLeftPressed?.Invoke(0);
 
         if (Input.GetKey(rightKey))
         {
             keysHaveBeenPressed = true;
             counter += _deltaTime * speed;
+
+            onRightPressed?.Invoke(1);
         }
+        else
+            onRightPressed?.Invoke(0);
 
         counter = Mathf.Clamp(counter, 0, 1);
 

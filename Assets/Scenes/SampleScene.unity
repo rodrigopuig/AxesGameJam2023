@@ -828,6 +828,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6186508079411974229, guid: 3fd25e9e6d4b1ae4b843eb5e5e31a4a9, type: 3}
+      propertyPath: motorAction.recoverTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6186508079411974229, guid: 3fd25e9e6d4b1ae4b843eb5e5e31a4a9, type: 3}
+      propertyPath: motorAction.pattern.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6186508079411974229, guid: 3fd25e9e6d4b1ae4b843eb5e5e31a4a9, type: 3}
+      propertyPath: motorAction.pattern.Array.data[2]
+      value: 119
+      objectReference: {fileID: 0}
+    - target: {fileID: 6186508079411974229, guid: 3fd25e9e6d4b1ae4b843eb5e5e31a4a9, type: 3}
+      propertyPath: motorAction.pattern.Array.data[3]
+      value: 101
+      objectReference: {fileID: 0}
+    - target: {fileID: 6186508079411974229, guid: 3fd25e9e6d4b1ae4b843eb5e5e31a4a9, type: 3}
+      propertyPath: motorAction.variantPerCompletedPattern
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fd25e9e6d4b1ae4b843eb5e5e31a4a9, type: 3}
 --- !u!1001 &2005193369
