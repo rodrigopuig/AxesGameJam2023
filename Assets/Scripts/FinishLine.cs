@@ -6,6 +6,9 @@ public class FinishLine : MonoBehaviour
 {
     public GameObject trigger1;
     public GameObject trigger2;
+
+    public static System.Action Finish;
+
     private int count;
 
     // Start is called before the first frame update
@@ -24,6 +27,7 @@ public class FinishLine : MonoBehaviour
         else if(count == 1)
         {
             trigger2.SetActive(false);
+            Finish?.Invoke();
         }
         count++;
     }
