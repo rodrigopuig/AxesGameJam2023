@@ -6123,14 +6123,14 @@ MonoBehaviour:
     speed: 1
     recoverSpeed: 1
   rightWheelAction:
-    leftKey: 107
-    rightKey: 108
+    leftKey: 258
+    rightKey: 259
     speed: 1
     recoverSpeed: 1
   motorAction:
-    pattern: 71000000
+    pattern: 7100000077000000
     recoverTime: 0.5
-    variantPerCompletedPattern: 0.02
+    variantPerCompletedPattern: 0.03
     recoverSpeed: 0.5
   brakeAction:
     leftKey: 110
