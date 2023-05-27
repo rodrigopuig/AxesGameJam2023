@@ -83,6 +83,11 @@ public class PatternAction : CustomAction
         variationCounter = Mathf.Clamp01(variationCounter + variantPerCompletedPattern);
     }
 
+    public override void ConfigureView(int _actionId, ControlViewer _controlViewer)
+    {
+        _controlViewer.FillKeycapPerId(_actionId, this);
+    }
+
     public KeyCode[] GetPattern()
     {
         return pattern;

@@ -11,7 +11,7 @@ public class CustomAction
     public virtual void Update(float _deltaTime) {}
 
     //utils
-    public virtual void ConfigureView(ControlViewer _controlViewer)
+    public virtual void ConfigureView(int _actionId, ControlViewer _controlViewer)
     {
         
     }
