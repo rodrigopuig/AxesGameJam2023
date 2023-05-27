@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 612e6544e76abe349bd363d6c26b9b60
+guid: 803712ab6445f4dde875f9d0aeb5cf89
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -44,12 +44,12 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -102,18 +102,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -129,106 +117,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: KartAtlas_0
+      name: Cochinillas_spritesheet_0
       rect:
         serializedVersion: 2
-        x: 19
-        y: 526
-        width: 760
-        height: 486
+        x: 31
+        y: 3
+        width: 208
+        height: 350
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19aea95ae864b3f48866f345882da25f
-      internalID: 1501124923
+      spriteID: 417eb2733ccad4c13b3d795a07677722
+      internalID: -629875336
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KartAtlas_1
+      name: Cochinillas_spritesheet_1
       rect:
         serializedVersion: 2
-        x: 795
-        y: 298
-        width: 211
-        height: 711
+        x: 287
+        y: 3
+        width: 207
+        height: 350
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e06aa2e7607fbeb4892ffd8fb9624777
-      internalID: -221984301
+      spriteID: be88367f7ceb94d20959aea48fc26034
+      internalID: -387755840
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KartAtlas_2
+      name: Cochinillas_spritesheet_2
       rect:
         serializedVersion: 2
-        x: 1
-        y: 84
-        width: 378
-        height: 433
+        x: 541
+        y: 3
+        width: 207
+        height: 350
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c8fb011c9df4614d924276e3caf3751
-      internalID: -461176873
+      spriteID: 98cac1771eb05428c90a699c3a9c9ddf
+      internalID: 1395880091
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KartAtlas_3
+      name: Cochinillas_spritesheet_3
       rect:
         serializedVersion: 2
-        x: 380
-        y: 0
-        width: 404
-        height: 504
+        x: 799
+        y: 3
+        width: 207
+        height: 350
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9013473008a78324aa5f3f5f8f22d2b3
-      internalID: -466845337
+      spriteID: 1a99c1aaac6a44db9abb0affc2d1a842
+      internalID: -929953082
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KartAtlas_4
+      name: Cochinillas_spritesheet_4
       rect:
         serializedVersion: 2
-        x: 13
-        y: 13
-        width: 346
-        height: 44
-      alignment: 9
-      pivot: {x: 0.5, y: 0.9069491}
-      border: {x: 0, y: 25, z: 0, w: 7}
+        x: 1055
+        y: 3
+        width: 207
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fd2b8b820b984395a99fbd78a9df80b
-      internalID: -1694268574
+      spriteID: b5a84bfb447374fbaaca418def86fe56
+      internalID: 1573070159
       vertices: []
       indices: 
       edges: []
@@ -236,7 +224,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 0403e41335f5bbd4bb1aba0c1eda5a5e
+    spriteID: 75ba40c25995b4f6e93a944e24282369
     internalID: 0
     vertices: []
     indices: 
@@ -244,11 +232,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      KartAtlas_0: 1501124923
-      KartAtlas_1: -221984301
-      KartAtlas_2: -461176873
-      KartAtlas_3: -466845337
-      KartAtlas_4: -1694268574
+      Cochinillas_spritesheet_0: -629875336
+      Cochinillas_spritesheet_1: -387755840
+      Cochinillas_spritesheet_2: 1395880091
+      Cochinillas_spritesheet_3: -929953082
+      Cochinillas_spritesheet_4: 1573070159
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

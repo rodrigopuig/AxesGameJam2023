@@ -12,11 +12,16 @@ public class AxleInfo {
 }
      
 public class CarController : MonoBehaviour {
+
+    public System.Action<int, int, Quaternion> onWheelRotation;
+    public System.Action<bool, bool> onBrakePressed;
+
     public List<AxleInfo> axleInfos; 
     public float maxMotorTorque;
     public float maxBrake;
     public float maxSteeringAngle;
     public InputController inputController;
+    public TrailRenderer[] trailRenderer; //0 - left 1 - right
 
     [HideInInspector]public Rigidbody rb;
 
@@ -60,43 +65,64 @@ public class CarController : MonoBehaviour {
         {
             leftBrake = maxBrake;
             rightBrake = 0;
+
+            trailRenderer[0].emitting = true;
+            trailRenderer[1].emitting = false;
+
+            onBrakePressed?.Invoke(true, false);
         }
         else if(wheel == 1)
         {
             rightBrake = maxBrake;
             leftBrake = 0;
+
+            trailRenderer[0].emitting = false;
+            trailRenderer[1].emitting = true;
+
+            onBrakePressed?.Invoke(false, true);
         }
         else
         {
             leftBrake = 0;
             rightBrake = 0;
+
+            trailRenderer[0].emitting = false;
+            trailRenderer[1].emitting = false;
+
+            onBrakePressed?.Invoke(false, false);
         }
     }
      
     private void FixedUpdate()
     {
-        foreach (AxleInfo axleInfo in axleInfos) {
-            if (axleInfo.steering) {
+        for(int i = 0; i<axleInfos.Count; i++)
+        {
+            AxleInfo axleInfo = axleInfos[i];
+
+            if (axleInfo.steering)
+            {
                 axleInfo.leftWheel.steerAngle = leftSteering;
                 axleInfo.rightWheel.steerAngle = rightSteering;
             }
-            if (axleInfo.motor) {
+            if (axleInfo.motor)
+            {
                 axleInfo.leftWheel.motorTorque = motorPower;
                 axleInfo.rightWheel.motorTorque = motorPower;
             }
-            if(axleInfo.braking)
+            if (axleInfo.braking)
             {
                 axleInfo.leftWheel.motorTorque = -leftBrake;
                 axleInfo.rightWheel.motorTorque = -rightBrake;
             }
-            ApplyLocalPositionToVisuals(axleInfo.leftWheel);
-            ApplyLocalPositionToVisuals(axleInfo.rightWheel);
+
+            ApplyLocalPositionToVisuals(i == 0, true, axleInfo.leftWheel);
+            ApplyLocalPositionToVisuals(i == 0, false, axleInfo.rightWheel);
         }
     }
      
     // finds the corresponding visual wheel
     // correctly applies the transform
-    private void ApplyLocalPositionToVisuals(WheelCollider collider)
+    private void ApplyLocalPositionToVisuals(bool isFront, bool isLeft, WheelCollider collider)
     {
         if (collider.transform.childCount == 0) {
             return;
@@ -110,6 +136,7 @@ public class CarController : MonoBehaviour {
      
         visualWheel.transform.position = position;
         visualWheel.transform.localRotation = Quaternion.Euler(90, collider.steerAngle, 0);
-        
+
+        onWheelRotation?.Invoke(isFront ? 0 : 1, isLeft ? 0 : 1, rotation);
     }
 }
