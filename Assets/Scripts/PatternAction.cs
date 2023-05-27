@@ -82,4 +82,9 @@ public class PatternAction : CustomAction
     {
         variationCounter = Mathf.Clamp01(variationCounter + variantPerCompletedPattern);
     }
+
+    public KeyCode[] GetPattern()
+    {
+        return pattern;
+    }
 }

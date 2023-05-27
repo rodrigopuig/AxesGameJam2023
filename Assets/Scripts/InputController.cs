@@ -47,4 +47,6 @@ public class InputController : MonoBehaviour
     {
         actions[(int)_actionID].onUpdate += onUpdate;
     }
+
+    public CustomAction[] GetActions() { return actions; }
 }

@@ -9,4 +9,10 @@ public class CustomAction
     public System.Action<float> onUpdate;
 
     public virtual void Update(float _deltaTime) {}
+
+    //utils
+    public virtual void ConfigureView(ControlViewer _controlViewer)
+    {
+        
+    }
 }
