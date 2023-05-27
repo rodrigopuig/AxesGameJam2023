@@ -109,7 +109,7 @@ public class CarController : MonoBehaviour {
         collider.GetWorldPose(out position, out rotation);
      
         visualWheel.transform.position = position;
-        visualWheel.transform.rotation = rotation * Quaternion.Euler(0, 0, 90);
+        visualWheel.transform.localRotation = Quaternion.Euler(90, collider.steerAngle, 0);
         
     }
 }
