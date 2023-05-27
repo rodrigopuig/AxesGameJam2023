@@ -8,11 +8,13 @@ public class AxleInfo {
     public WheelCollider rightWheel;
     public bool motor;
     public bool steering;
+    public bool braking;
 }
      
 public class CarController : MonoBehaviour {
     public List<AxleInfo> axleInfos; 
     public float maxMotorTorque;
+    public float maxBrake;
     public float maxSteeringAngle;
     public InputController inputController;
 
@@ -21,6 +23,8 @@ public class CarController : MonoBehaviour {
     private float leftSteering;
     private float rightSteering;
     private float motorPower;
+    private float leftBrake;
+    private float rightBrake;
 
     private void Start()
     {
@@ -28,6 +32,7 @@ public class CarController : MonoBehaviour {
         inputController.SetListener(CustomAction.ActionID.TurnWheel_Left, SetLeftWheelRotation);
         inputController.SetListener(CustomAction.ActionID.TurnWheel_Right, SetRightWheelRotation);
         inputController.SetListener(CustomAction.ActionID.Accelerate, SetMotorPower);
+        inputController.SetListener(CustomAction.ActionID.Brake, SetBrakingWheel);
     }
 
     // Expects values from 0-1
@@ -45,12 +50,31 @@ public class CarController : MonoBehaviour {
     {
         motorPower = maxMotorTorque * (power /* * 2 - 1 */);
     }
+
+    // 0 -> left
+    // 1 -> right
+    // any other value -> do nothing
+    public void SetBrakingWheel(float wheel)
+    {
+        if(wheel == 0)
+        {
+            leftBrake = maxBrake;
+            rightBrake = 0;
+        }
+        else if(wheel == 1)
+        {
+            rightBrake = maxBrake;
+            leftBrake = 0;
+        }
+        else
+        {
+            leftBrake = 0;
+            rightBrake = 0;
+        }
+    }
      
     private void FixedUpdate()
     {
-        // float motor = maxMotorTorque * Input.GetAxis("Vertical");
-        // float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
-     
         foreach (AxleInfo axleInfo in axleInfos) {
             if (axleInfo.steering) {
                 axleInfo.leftWheel.steerAngle = leftSteering;
@@ -59,6 +83,11 @@ public class CarController : MonoBehaviour {
             if (axleInfo.motor) {
                 axleInfo.leftWheel.motorTorque = motorPower;
                 axleInfo.rightWheel.motorTorque = motorPower;
+            }
+            if(axleInfo.braking)
+            {
+                axleInfo.leftWheel.motorTorque = -leftBrake;
+                axleInfo.rightWheel.motorTorque = -rightBrake;
             }
             ApplyLocalPositionToVisuals(axleInfo.leftWheel);
             ApplyLocalPositionToVisuals(axleInfo.rightWheel);

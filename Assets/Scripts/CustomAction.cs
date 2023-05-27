@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CustomAction
 {
-    public enum ActionID { TurnWheel_Left, TurnWheel_Right, Accelerate }
+    public enum ActionID { TurnWheel_Left, TurnWheel_Right, Accelerate, Brake }
 
     public System.Action<float> onUpdate;
 

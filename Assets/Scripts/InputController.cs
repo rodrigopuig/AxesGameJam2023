@@ -18,6 +18,7 @@ public class InputController : MonoBehaviour
     public TDAction leftWheelAction;
     public TDAction rightWheelAction;
     public PatternAction motorAction;
+    public TDAction brakeAction;
 
     private void Awake()
     {
@@ -25,7 +26,8 @@ public class InputController : MonoBehaviour
         {
             leftWheelAction.Initialize(),
             rightWheelAction.Initialize(),
-            motorAction.Initialize()
+            motorAction.Initialize(),
+            brakeAction.Initialize()
         };
 
         // actions[(int)ActionID.TurnWheel_Left].onUpdate += (val) => leftRight.text = $"left_right: {val.ToString("0.00")}";
