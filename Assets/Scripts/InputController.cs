@@ -48,5 +48,19 @@ public class InputController : MonoBehaviour
         actions[(int)_actionID].onUpdate += onUpdate;
     }
 
+    public void SetListener_onAddCombo(ActionID _actionID, Action<int> onAddCombo)
+    {
+        PatternAction _patternAction = actions[(int)_actionID].Cast<PatternAction>();
+        if(_patternAction!=null)
+            _patternAction.onKeyAddedToPattern += onAddCombo;
+    }
+
+    public void SetListener_onCompleteCombo(ActionID _actionID, Action onCompletecombo)
+    {
+        PatternAction _patternAction = actions[(int)_actionID].Cast<PatternAction>();
+        if (_patternAction != null)
+            _patternAction.onComplete += onCompletecombo;
+    }
+
     public CustomAction[] GetActions() { return actions; }
 }

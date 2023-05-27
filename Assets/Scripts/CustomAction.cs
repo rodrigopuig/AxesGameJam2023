@@ -15,4 +15,6 @@ public class CustomAction
     {
         
     }
+
+    public T Cast<T>() where T : CustomAction { return (T)this; }
 }
