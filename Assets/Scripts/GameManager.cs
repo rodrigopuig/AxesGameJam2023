@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
         }
 
         mainMenu.SetActive(true);
-        controlsUI.SetActive(false);
+        controlsUI.SetActive(true);
         countdown.gameObject.SetActive(false);
 
         string[] scores = PlayerPrefs.GetString("scores").Split("\n");
