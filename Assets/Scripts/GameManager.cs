@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
             // });
         }
 
-        string finalScores = "Best times:";
+        string finalScores = "";
         foreach(var ss in scoreStruct)
         {
             finalScores += "\n" + ss.Item1 + ": " + ss.Item2.ToString() + "s";
