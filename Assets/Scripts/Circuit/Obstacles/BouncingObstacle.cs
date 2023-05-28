@@ -46,6 +46,8 @@ public class BouncingObstacle : MonoBehaviour
     {
         StopAllCoroutines();
         StartCoroutine(Grow());
+
+        CameraController.instance?.Shake();
     }
 
     IEnumerator Grow()
