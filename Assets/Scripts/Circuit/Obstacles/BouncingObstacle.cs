@@ -50,6 +50,7 @@ public class BouncingObstacle : MonoBehaviour
 
     IEnumerator Grow()
     {
+        SoundController.instance.PlaySound(SFXid.nabo);
         float _counter = 0;
         float _lerpValue = 0;
         while(_counter < timeToGrow)
