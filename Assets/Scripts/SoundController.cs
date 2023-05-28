@@ -29,6 +29,11 @@ public class SoundController : MonoBehaviour
         }
     }
 
+    public void PlayButton()
+    {
+        PlaySound(SFXid.boton);
+    }
+
     public void UpdateRunVolume(float volume)
     {
         constantSFX.volume = volume;
