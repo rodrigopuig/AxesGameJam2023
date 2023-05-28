@@ -6,8 +6,8 @@ using TMPro;
 
 public class KeyGroup : MonoBehaviour
 {
-    public TextMeshProUGUI key1;
-    public TextMeshProUGUI key2;
+    public UIKeyCap key1;
+    public UIKeyCap key2;
     public Image sprite;
     public LeftRightSlider lrSlider;
     public NormalSlider normalSlider;
