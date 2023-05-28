@@ -168,6 +168,7 @@ public class CarController : MonoBehaviour {
     {
         if(collision.relativeVelocity.magnitude > 5)
         {
+            CameraController.instance?.Shake();
             SoundController.instance.PlaySound(SFXid.chocazo);
         }
     }
