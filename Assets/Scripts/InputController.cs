@@ -36,10 +36,13 @@ public class InputController : MonoBehaviour
 
     public void Update()
     {
-        float _deltaTime = Time.deltaTime;
-        for(int i  = 0; i<actions.Length; i++)
+        if(Time.timeScale >= 1)
         {
-            actions[i].Update(_deltaTime);
+            float _deltaTime = Time.deltaTime;
+            for(int i  = 0; i<actions.Length; i++)
+            {
+                actions[i].Update(_deltaTime);
+            }
         }
     }
 
