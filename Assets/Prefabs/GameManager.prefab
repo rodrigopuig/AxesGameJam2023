@@ -2831,7 +2831,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -461176873, guid: 612e6544e76abe349bd363d6c26b9b60, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c578c7df9b4803e49bc1768206cab3ee, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2876,8 +2876,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 11.3231, y: 0}
-  m_SizeDelta: {x: -71.5278, y: -50.9401}
+  m_AnchoredPosition: {x: 5.2133, y: -3.3325958}
+  m_SizeDelta: {x: -59.3081, y: -57.6053}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8715291591686031602
 CanvasRenderer:
@@ -2907,7 +2907,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Best times:'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2dcc8d44a76d7174b955b91b43fb8196, type: 2}
   m_sharedMaterial: {fileID: 2937518444974271422, guid: 2dcc8d44a76d7174b955b91b43fb8196, type: 2}
