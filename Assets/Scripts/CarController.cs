@@ -55,7 +55,7 @@ public class CarController : MonoBehaviour {
     {
         if(power > 0 && motorPower == 0)
         {
-            SoundController.instance.PlaySound(SFXid.cochinilla);
+            SoundController.instance?.PlaySound(SFXid.cochinilla);
         }
         motorPower = maxMotorTorque * (power /* * 2 - 1 */);
     }
@@ -66,7 +66,7 @@ public class CarController : MonoBehaviour {
     public void SetBrakingWheel(float wheel)
     {
         float velocity = rb.velocity.magnitude;
-        SoundController.instance.UpdateRunVolume(velocity);
+        SoundController.instance?.UpdateRunVolume(velocity);
 
         if(wheel == 0)
         {
