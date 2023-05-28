@@ -47,6 +47,7 @@ public enum SFXid
     countdown321,
     countdown0,
     nabo,
+    aplastar,
 }
 
 [System.Serializable]

@@ -98,11 +98,17 @@ MonoBehaviour:
     clips:
     - {fileID: 8300000, guid: aeb437661dd05ef448aefe8c0b6cf3ec, type: 3}
   - id: 9
-    volume: 2
+    volume: 1
     clips:
     - {fileID: 8300000, guid: 693a593ceee0588428916db29dbb62e5, type: 3}
     - {fileID: 8300000, guid: 85b82ec1d906b694684a9fc95d945225, type: 3}
     - {fileID: 8300000, guid: 53c2b6a81d750e449a0c1bf45e076d58, type: 3}
+  - id: 10
+    volume: 1
+    clips:
+    - {fileID: 8300000, guid: a1ea204de964c8b44a16cf7ee3b8fb37, type: 3}
+    - {fileID: 8300000, guid: b2c37fb11a9bff642b84c5c720be4c51, type: 3}
+    - {fileID: 8300000, guid: 9e79ac80d62611649b3aa56a1b247608, type: 3}
 --- !u!82 &1425689242173551584
 AudioSource:
   m_ObjectHideFlags: 0
