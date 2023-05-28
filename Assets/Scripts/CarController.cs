@@ -171,5 +171,7 @@ public class CarController : MonoBehaviour {
             CameraController.instance?.Shake();
             SoundController.instance.PlaySound(SFXid.chocazo);
         }
+
+        Debug.Log("COLLISION: " + collision.transform.name);
     }
 }
