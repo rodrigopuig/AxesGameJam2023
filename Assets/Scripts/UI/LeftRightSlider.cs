@@ -28,13 +28,13 @@ public class LeftRightSlider : MonoBehaviour
     {
         yield return null;
 
-        float _width = rtContainer.rect.width;
+        /*float _width = rtContainer.rect.width;
         float _height = rtContainer.rect.height;
 
         rtContainer.anchorMax = Vector2.right * 0.5f;
         rtContainer.anchorMin = Vector2.right * 0.5f;
         rtContainer.anchoredPosition = Vector2.up * 5f;
-        rtContainer.sizeDelta = new Vector2(_width, _height);
+        rtContainer.sizeDelta = new Vector2(_width, _height);*/
         containerSize_x = rtContainer.sizeDelta.x;
     }
 

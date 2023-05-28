@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 using ActionID = CustomAction.ActionID;
 
+using DG.Tweening;
+
 public class ControlViewer : MonoBehaviour
 {
     public KeyGroup[] keyGroups;
@@ -63,7 +65,19 @@ public class ControlViewer : MonoBehaviour
         PatternAction _patternAction = (PatternAction)_action;
         _patternAction.onFail += () => { for (int i = 0; i < idKeycapPair[_id].Length; i++) idKeycapPair[_id][i].SetNormalColor(); };
         _patternAction.onKeyAddedToPattern += (value) => idKeycapPair[_id][value].SetPressedColor();
-        _patternAction.onComplete += () => { for (int i = 0; i < idKeycapPair[_id].Length; i++) idKeycapPair[_id][i].SetNormalColor(); };
+        _patternAction.onComplete += () => {
+
+            for (int i = 0; i < idKeycapPair[_id].Length; i++)
+                idKeycapPair[_id][i].SetPressedColor();
+            float _a = 0;
+            DOTween.To(() => _a, x => _a = x, 1, 0.1f).OnComplete(() =>
+            {
+                for (int i = 0; i < idKeycapPair[_id].Length; i++)
+                    idKeycapPair[_id][i].SetNormalColor();
+            });
+            //for (int i = 0; i < idKeycapPair[_id].Length; i++)
+            //    idKeycapPair[_id][i].SetNormalColor();
+        };
 
         KeyCode[] _keys = _patternAction.GetPattern();
 
@@ -83,4 +97,6 @@ public class ControlViewer : MonoBehaviour
     {
         idKeycapPair[_actionId][_index].SetKey(_key);
     }
+
+
 }

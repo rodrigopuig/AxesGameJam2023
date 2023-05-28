@@ -22,14 +22,14 @@ public class NormalSlider : MonoBehaviour
     {
         yield return null;
 
-        float _width = rtContainer.rect.width;
+        /*float _width = rtContainer.rect.width;
         float _height = rtContainer.rect.height;
 
         rtContainer.anchorMax = Vector2.zero;
         rtContainer.anchorMin = Vector2.zero;
         rtContainer.anchoredPosition = Vector2.up * 5f;
         rtContainer.pivot = Vector2.up * 0.5f;
-        rtContainer.sizeDelta = new Vector2(_width, _height);
+        rtContainer.sizeDelta = new Vector2(_width, _height);*/
         containerSize_x = rtContainer.sizeDelta.x;
     }
 
